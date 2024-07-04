@@ -1,0 +1,51 @@
+[
+  {
+    "albumTitle": "Lala Land",
+    "brandName": "Lala",
+    "albumRating": "5",
+    "albumImage": "/src/assets/AlbumImgs/9206372.jpg"
+  },
+  {
+    "albumTitle": "Dreamscape",
+    "brandName": "Dream",
+    "albumRating": "4.5",
+    "albumImage": "/src/assets/AlbumImgs/9222511.jpg"
+  },
+  {
+    "albumTitle": "Harmony",
+    "brandName": "Melody",
+    "albumRating": "4",
+    "albumImage": "src/assets/AlbumImgs/9227215.jpg"
+  },
+  {
+    "albumTitle": "Euphoria",
+    "brandName": "Bliss",
+    "albumRating": "5",
+    "albumImage": "src/assets/AlbumImgs/9206372.jpg"
+  },
+  {
+    "albumTitle": "Echoes",
+    "brandName": "Soundwave",
+    "albumRating": "4.2",
+    "albumImage": "src/assets/AlbumImgs/9212102.jpg"
+  },
+  {
+    "albumTitle": "Starlight",
+    "brandName": "Star",
+    "albumRating": "3.5",
+    "albumImage": "src/assets/AlbumImgs/9206372.jpg"
+  },
+  {
+    "albumTitle": "Rhythm",
+    "brandName": "Beat",
+    "albumRating": "4.8",
+    "albumImage": "src/assets/AlbumImgs/9212350.jpg"
+  },
+  {
+    "albumTitle": "Zenith",
+    "brandName": "Peak",
+    "albumRating": "5",
+    "albumImage": "src/assets/AlbumImgs/9220659.jpg"
+  }
+
+]

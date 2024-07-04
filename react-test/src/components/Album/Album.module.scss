@@ -1,0 +1,52 @@
+.albumBox {
+  border: 1px solid black;
+  border-radius: 5%;
+  height: 30vh;
+  width: 100%;
+  position: relative; // Ensure positioning context for pseudo-element //
+  overflow: hidden;
+  transition: background-color 0.3s ease; // Smooth transition for background color //
+  position: relative; // Ensure positioning context for pseudo-element
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .albumContent {
+    position: relative;
+    z-index: 1; // Ensure text is above background image //
+    color: rgb(172, 172, 230);
+    text-shadow: 1px 1px 2px black; 
+    padding: 1rem;
+    box-sizing: border-box;
+   
+  }
+
+  .albumBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2; // Initial opacity //
+    transition: opacity 0.5s ease; // Smooth transition for opacity //
+    z-index: 0;// Ensure background image stays behind text
+    
+  }
+
+  &:hover {
+    .albumBackground {
+      opacity: 1; // Full opacity on hover //
+  }
+  }
+    
+}
+
+
+
+
+

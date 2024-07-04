@@ -1,0 +1,22 @@
+$sm: 600px;
+$sm1:601px;
+$md: 900px;
+$lg: 901px;
+
+@mixin small-tablet {
+  @media screen and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $md) and (min-width: $sm1) {
+    @content;
+  }
+}
+
+@mixin larger-tablet {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}

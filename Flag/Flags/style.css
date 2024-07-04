@@ -1,0 +1,50 @@
+@media screen and (max-width: 600px) {
+  .belgiumFlag {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  .belgiumFlag {
+    display: block;
+    background-color: bisque;
+  }
+}
+@media screen and (min-width: 901px) {
+  .belgiumFlag {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .germanyFlag {
+    display: block;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  .germanyFlag {
+    display: none;
+  }
+}
+@media screen and (min-width: 901px) {
+  .germanyFlag {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .irishFlag {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  .irishFlag {
+    display: none;
+  }
+}
+@media screen and (min-width: 901px) {
+  .irishFlag {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

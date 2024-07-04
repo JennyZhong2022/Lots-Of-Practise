@@ -1,0 +1,32 @@
+// .card {
+//   border: 1px solid black;
+//   width: 400px;
+// }
+
+// .border{
+//   border: none;
+// }
+
+
+/* Default styles for the card */
+.card {
+  width: 200px;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Styles for light mode */
+.light-mode {
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333; /* Dark text color */
+}
+
+/* Styles for dark mode */
+.dark-mode {
+  background-color: #333; /* Dark background */
+  color: #f0f0f0; /* Light text color */
+}

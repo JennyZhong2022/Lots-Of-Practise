@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YOU HAVE TO USE LIVE SERVER</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script defer src="script.js"></script> -->
+    <script type="module" src="./module-script.js"></script>
+  </head>
+  <body>
+    <h2>🌍 citizen of the world 🌏</h2>
+    <section id="currency">
+      <h3>currency converter</h3>
+      <form id="currencyForm">
+        <div>
+          <label for="amount">Amount in AUD: </label>
+          <input type="number" min="0" name="amount" id="amount" />
+        </div>
+        <div>
+          <label for="country">to </label>
+          <select id="country" name="country">
+            <option value="PLN">PLN</option>
+            <option value="GBP">GBP</option>
+            <option value="IQD">IQD</option>
+          </select>
+        </div>
+        <button id="convertBtn">Convert</button>
+      </form>
+      <p id="currencyOutcome"></p>
+    </section>
+    <section class="hello">
+      <h3>hello Converter</h3>
+      <p>Which language would you like to see hello in?</p>
+      <form id="helloForm">
+        <div>
+          <button class="hi-btn" value="pl">🇵🇱 Polski</button>
+          <button class="hi-btn" value="ar">🇸🇦 العربية<</button>
+        </div>
+      </form>
+      <p id="hiPara"></p>
+    </section>
+
+
+    <section class="color">
+      <h3>Color Converter to Fruit</h3>
+      <p>What is your favorite color</p>
+      <form id="colorForm">
+        <div>
+          <input type="text" id="colorInput">
+          <button id="colorBtn" >Covert</button>
+        </div>
+      </form>
+      <p id="colorDiv"></p>
+    </section>
+  </body>
+</html>

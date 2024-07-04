@@ -1,0 +1,44 @@
+@use './partials/queries' as q;
+
+// Render a German flag on screens <= 600px
+// Render a Belgian flag on screens <= 900px
+// Render an Irish flag on screens > 901px
+// The divs will change color depening on screen size
+
+.belgiumFlag {
+  @include q.small-tablet {
+    display: none;
+  }
+  @include q.tablet {
+    display: block;
+    background-color: bisque;
+  }
+  @include q.larger-tablet {
+    display: none;
+  }
+}
+
+.germanyFlag {
+  @include q.small-tablet {
+    display: block;
+  }
+  @include q.tablet {
+    display: none;
+  }
+  @include q.larger-tablet {
+    display: none;
+  }
+}
+
+.irishFlag {
+  @include q.small-tablet {
+    display: none;
+  }
+  @include q.tablet {
+    display: none;
+  }
+  @include q.larger-tablet {
+    display: block;
+  }
+}
+
