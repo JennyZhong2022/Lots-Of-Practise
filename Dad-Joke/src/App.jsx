@@ -6,9 +6,9 @@ function App() {
 
 
   return (
-    <>
+    <div className='box'>
      <JokeLoaderContainer/>
-    </>
+    </div>
   )
 }
 
