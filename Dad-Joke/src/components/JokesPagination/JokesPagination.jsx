@@ -1,10 +1,11 @@
 
-const JokesPagination = ({ setCurrentPage, currentPage }) => {
+const JokesPagination = ({ setCurrentPage, currentPage,jokes ,jokesQuantity,searchTerm}) => {
 
   const maxPage=10
   
 
   const handlePaginationNext = () => {
+    
     if (currentPage < maxPage) {
       setCurrentPage(prev => prev + 1)
       console.log(currentPage);}
@@ -13,14 +14,17 @@ const JokesPagination = ({ setCurrentPage, currentPage }) => {
     
   const handlePaginationPrevious = () => {
     if (currentPage > 1) {
+     
       setCurrentPage(prev => prev - 1)  
       console.log(currentPage);}
   }
    
 
+
   const handleCurrentPageChange = (e) => {
+    
     const newPage = Number(e.target.value);
-    setCurrentPage(newPage);
+    setCurrentPage(newPage)
   }
       
   return (
@@ -36,7 +40,7 @@ const JokesPagination = ({ setCurrentPage, currentPage }) => {
       ))}
     </select>
 
-      <button onClick={handlePaginationNext} disabled={currentPage===maxPage}>Next Page</button>
+      <button onClick={handlePaginationNext} disabled={currentPage===maxPage || jokes.length<jokesQuantity}>Next Page</button>
     </div>
   )
 }

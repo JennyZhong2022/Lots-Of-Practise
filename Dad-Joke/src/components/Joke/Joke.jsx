@@ -3,7 +3,8 @@ const Joke = ({ joke }) => {
 
   return (
     
-      <li>{joke}</li>
+    <li>{joke}</li>
+    
   )
 }
 
