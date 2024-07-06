@@ -2,31 +2,37 @@
 
 const SearchBar = ({ searchTerm,setSearchTerm ,jokesQuantity, setJokesQuantity}) => {
 
-const onTermChange = (e) => {
+const handleTermChange = (e) => {
     setSearchTerm(e.target.value)
    
 }
   
-  const onQuantityChange = (e) => {
-  setJokesQuantity(e.target.value)
+const handleQuantityChange = (e) => {
+setJokesQuantity(e.target.value)
 }  
+
+
   
-  const onSubmit = (e) => {
-    e.preventDefault()
-    console.log(searchTerm);
-    console.log(jokesQuantity);
-}  
+const handleSearchSubmit = (e) => {
+  e.preventDefault()
+  console.log(searchTerm);
+  console.log(jokesQuantity);
+  }  
+  
+
+const maxQuantity=10
+  
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSearchSubmit}>
     
       <input
           type="text"
           name='searchTerm'
           value={searchTerm}
-          onChange={onTermChange}
+          onChange={handleTermChange}
         />
-      <select name="quantity" value={jokesQuantity} onChange={onQuantityChange}>
+      {/* <select name="quantity" value={jokesQuantity} onChange={handleQuantityChange}>
           <option value="Select">Quantity</option> 
           <option value="1">1</option>
           <option value="2">2</option>  
@@ -37,11 +43,24 @@ const onTermChange = (e) => {
           <option value="7">7</option>  
           <option value="8">8</option>
           <option value="9">9</option>   
-      </select>
+      </select> */}
     
-      <button type="submit">Search</button>
+        
+      <select value={jokesQuantity} onChange={handleQuantityChange}>
+      {Array.from({ length: maxQuantity }, (_, i) => (
+        <option key={i + 1} value={i + 1}>
+          {i+1}
+        </option>
+      ))}
+    </select>
+
+        <button type="submit">Search</button>
+  
       </form>
       
+
+    
+
     </div>
   )
 }

@@ -1,6 +1,6 @@
 
 const Joke = ({ joke }) => {
-  console.log(joke);
+
   return (
     
       <li>{joke}</li>
