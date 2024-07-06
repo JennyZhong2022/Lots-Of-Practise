@@ -1,0 +1,35 @@
+/* JokesPagination.module.scss */
+
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  .paginationButton {
+    padding: 8px 16px;
+    background-color: #6faaea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background-color: #ccc; /* Change color when disabled */
+    }
+  }
+  .selectContainer {
+  margin-right: 10px;
+  .selectBox {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+}
+
+
+

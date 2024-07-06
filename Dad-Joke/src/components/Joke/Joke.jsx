@@ -1,11 +1,13 @@
 
+
+import styles from './Joke.module.scss';
+
 const Joke = ({ joke }) => {
-
   return (
-    
-    <li>{joke}</li>
-    
-  )
-}
+    <li className={styles.jokeItem}>
+      {joke}
+    </li>
+  );
+};
 
-export default Joke
+export default Joke;

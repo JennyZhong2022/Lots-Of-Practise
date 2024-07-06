@@ -1,48 +1,61 @@
+// JokesPagination.jsx
 
-const JokesPagination = ({ setCurrentPage, currentPage,jokes ,jokesQuantity,searchTerm}) => {
+import React from 'react';
+import styles from './JokesPagination.module.scss'; // Import SCSS module
 
-  const maxPage=10
-  
+const JokesPagination = ({ setCurrentPage, currentPage, jokes, jokesQuantity }) => {
+  const maxPage = 10;
 
   const handlePaginationNext = () => {
-    
     if (currentPage < maxPage) {
-      setCurrentPage(prev => prev + 1)
-      console.log(currentPage);}
-  }
-   
-    
+      setCurrentPage(prev => prev + 1);
+    }
+  };
+
   const handlePaginationPrevious = () => {
     if (currentPage > 1) {
-     
-      setCurrentPage(prev => prev - 1)  
-      console.log(currentPage);}
-  }
-   
-
+      setCurrentPage(prev => prev - 1);
+    }
+  };
 
   const handleCurrentPageChange = (e) => {
-    
     const newPage = Number(e.target.value);
-    setCurrentPage(newPage)
-  }
-      
+    setCurrentPage(newPage);
+  };
+
   return (
-    <div>
-      <button onClick={handlePaginationPrevious}
-        disabled={currentPage === 1}>Previous Page</button>
-      
-      <select value={currentPage} onChange={handleCurrentPageChange}>
-      {Array.from({ length: maxPage }, (_, i) => (
-        <option key={i + 1} value={i + 1}>
-          {i + 1}
-        </option>
-      ))}
-    </select>
+    <div className={styles.paginationContainer}>
+      <button
+        className={styles.paginationButton}
+        onClick={handlePaginationPrevious}
+        disabled={currentPage === 1}
+      >
+        Previous Page
+      </button>
 
-      <button onClick={handlePaginationNext} disabled={currentPage===maxPage || jokes.length<jokesQuantity}>Next Page</button>
+      <div className={styles.selectContainer}>
+        <select
+          className={styles.selectBox}
+          value={currentPage}
+          onChange={handleCurrentPageChange}
+        >
+          {Array.from({ length: maxPage }, (_, i) => (
+            <option key={i + 1} value={i + 1}>
+              {i + 1}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <button
+        className={styles.paginationButton}
+        onClick={handlePaginationNext}
+        disabled={currentPage === maxPage || jokes.length < jokesQuantity}
+      >
+        Next Page
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default JokesPagination
+export default JokesPagination;

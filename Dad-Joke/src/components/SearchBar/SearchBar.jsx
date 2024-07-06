@@ -1,4 +1,4 @@
-
+import styles from './SearchBar.module.scss'; 
 
 const SearchBar = ({ searchTerm,setSearchTerm ,jokesQuantity, setJokesQuantity}) => {
 
@@ -23,15 +23,17 @@ const handleSearchSubmit = (e) => {
 const maxQuantity=10
   
   return (
-    <div>
-      <form onSubmit={handleSearchSubmit}>
-    
+    <div className={styles.searchContainer}>
+    <form onSubmit={handleSearchSubmit}>
+
       <input
-          type="text"
-          name='searchTerm'
-          value={searchTerm}
-          onChange={handleTermChange}
-        />
+        className={styles.inputField}
+        type="text"
+        name="searchTerm"
+        value={searchTerm}
+        onChange={handleTermChange}
+        placeholder="Enter search term"
+      />
       {/* <select name="quantity" value={jokesQuantity} onChange={handleQuantityChange}>
           <option value="Select">Quantity</option> 
           <option value="1">1</option>
@@ -45,24 +47,25 @@ const maxQuantity=10
           <option value="9">9</option>   
       </select> */}
     
-        
-      <select value={jokesQuantity} onChange={handleQuantityChange}>
-      {Array.from({ length: maxQuantity }, (_, i) => (
-        <option key={i + 1} value={i + 1}>
-          {i+1}
-        </option>
-      ))}
-    </select>
+    <select className={styles.selectBox} value={jokesQuantity} onChange={handleQuantityChange}>
+          {Array.from({ length: maxQuantity }, (_, i) => (
+            <option key={i + 1} value={i + 1}>
+              {i + 1}
+            </option>
+          ))}
+        </select>
 
-        <button type="submit">Search</button>
-  
+        <button className={styles.submitButton} type="submit">
+          Search
+        </button>
+
       </form>
-      
-
-    
-
     </div>
   )
 }
 
 export default SearchBar
+
+
+
+

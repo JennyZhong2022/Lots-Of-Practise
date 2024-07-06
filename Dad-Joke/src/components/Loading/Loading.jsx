@@ -1,11 +1,12 @@
 
+import styles from './Loading.module.scss';
 
 const Loading = () => {
   return (
-    <>
-      <h3>  Loading </h3>
-    </>
-  )
-}
+    <div className={styles['loading-container']}>
+      <h3 className={styles['loading-text']}>Loading...</h3>
+    </div>
+  );
+};
 
-export default Loading
+export default Loading;

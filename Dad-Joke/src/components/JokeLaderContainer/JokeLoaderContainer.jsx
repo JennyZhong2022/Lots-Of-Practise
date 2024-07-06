@@ -3,6 +3,7 @@ import Joke from "../Joke/Joke"
 import SearchBar from "../SearchBar/SearchBar"
 import JokesPagination from "../JokesPagination/JokesPagination"
 import Loading from "../Loading/Loading"
+import styles from './JokeLoaderContainer.module.scss'
 
 
 
@@ -60,19 +61,25 @@ jokes.map((joke) => console.log(joke));
   
  
   return (
-    <>
+    <div className={styles.loadContainer}> {/* Use regular class name without styles */}
       <SearchBar
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         jokesQuantity={jokesQuantity}
-        setJokesQuantity={setJokesQuantity}  />
+        setJokesQuantity={setJokesQuantity}
+      />
 
-      {loading ?
-       ( <Loading />) :
-        ( 
-          <div>
-            { jokes.length === 0 && <h3>Can't find Joke...</h3>}
-
+      {loading ? (
+        <div >
+          <Loading className={styles.loading} />
+        </div>
+      ) : (
+        <div>
+          {jokes.length === 0 && (
+            <div  className={`${styles.message} ${styles["no-jokes"]}`}>
+              <h3>Can't find Joke...</h3>
+            </div>
+          )}
 
           {jokes.length > 0 && (
             <ul>
@@ -81,24 +88,24 @@ jokes.map((joke) => console.log(joke));
               ))}
             </ul>
           )}
-          { jokes.length < jokesQuantity && jokes.length > 0 && <h3>No More Jokes...</h3>}
+
+          {jokes.length < jokesQuantity && jokes.length > 0 && (
+            <div className={styles.message}>
+              <h3>No More Jokes...</h3>
+            </div>
+          )}
         </div>
-        )
-      }
+      )}
 
-   
-
-      <JokesPagination
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        searchTerm={searchTerm}
-        jokes={jokes}
-        jokesQuantity={jokesQuantity}
-       
-      
-      />
-    </>
-  
+      <div className={styles.paginationContainer}>
+        <JokesPagination
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          jokes={jokes}
+          jokesQuantity={jokesQuantity}
+        />
+      </div>
+    </div>
   )
 }
 
