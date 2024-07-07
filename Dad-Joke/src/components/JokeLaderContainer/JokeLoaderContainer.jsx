@@ -14,9 +14,8 @@ const JokeLoaderContainer = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false)
   const [isSearchClicked, setIsSearchClicked] = useState(false)
+  const [fetched, setFetched]=useState(true)
 
-
-  
 
 
     const fetchDadJoke = async () => {
@@ -35,12 +34,12 @@ const JokeLoaderContainer = () => {
         const data = await response.json()
            
         setJokes(data.results)
+        setFetched(false)
        
       } catch (error) {
         console.error(error.message)
       } finally {
         setLoading(false)  //stop loading
-        // setIsSubmitted(false)
       }   
     }
     
@@ -62,7 +61,8 @@ const JokeLoaderContainer = () => {
   
 // jokes.map((joke) => console.log(joke));
   
-console.log(isSearchClicked);
+  console.log('isSearchClicked',isSearchClicked);
+ console.log('fetched',fetched);
 
   
  
@@ -82,11 +82,11 @@ console.log(isSearchClicked);
         </div>
       ) : (
         <div>
-          {/* {!isSearchClicked && jokes.length === 0 && (
+          {!fetched && jokes.length === 0 && (
             <div  className={`${styles.message} ${styles["no-jokes"]}`}>
               <h3>Can't find Joke...</h3>
             </div>
-          )} */}
+          )}
 
           {jokes.length > 0 && (
             <ul>
@@ -96,7 +96,7 @@ console.log(isSearchClicked);
             </ul>
           )}
 
-          { jokes.length < jokesQuantity && jokes.length > 0 && (
+          { !fetched && jokes.length < jokesQuantity && jokes.length > 0 && (
             <div className={styles.message}>
               <h3>No More Jokes...</h3>
             </div>
