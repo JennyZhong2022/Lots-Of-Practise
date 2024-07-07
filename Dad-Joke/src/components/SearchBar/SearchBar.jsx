@@ -1,6 +1,6 @@
 import styles from './SearchBar.module.scss'; 
 
-const SearchBar = ({ searchTerm,setSearchTerm ,jokesQuantity, setJokesQuantity}) => {
+const SearchBar = ({ searchTerm,setSearchTerm ,jokesQuantity, setJokesQuantity,setIsSearchClicked}) => {
 
 const handleTermChange = (e) => {
     setSearchTerm(e.target.value)
@@ -15,6 +15,7 @@ setJokesQuantity(e.target.value)
   
 const handleSearchSubmit = (e) => {
   e.preventDefault()
+  setIsSearchClicked(true)
   console.log(searchTerm);
   console.log(jokesQuantity);
   }  

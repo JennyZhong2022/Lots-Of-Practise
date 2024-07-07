@@ -13,13 +13,11 @@ const JokeLoaderContainer = () => {
   const [jokesQuantity, setJokesQuantity] = useState(0)
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false)
+  const [isSearchClicked, setIsSearchClicked] = useState(false)
+
 
   
 
-  
-
-  useEffect(() => {
-   
 
     const fetchDadJoke = async () => {
       setLoading(true)  // loading
@@ -32,7 +30,7 @@ const JokeLoaderContainer = () => {
         })
       
         if (!response.ok) {
-          throw new error ("Something Wrong")
+          throw new Error ("Something Wrong")
         }
         const data = await response.json()
            
@@ -45,18 +43,26 @@ const JokeLoaderContainer = () => {
         // setIsSubmitted(false)
       }   
     }
-    fetchDadJoke()
-    console.log(jokes);
-  }, [searchTerm, jokesQuantity, currentPage])
+    
   
   // [searchItem, jokesQuantity, currentPage])
   // use isSubmitted rather than searchTerm as searchTerm fetch the data every time when typing changes
 
 
-  
-jokes.map((joke) => console.log(joke));
-  
+  useEffect(() => {
+   
+    if (isSearchClicked) {
+      fetchDadJoke()
+    } 
+    setIsSearchClicked(false)
+    // console.log(jokes);
+  }, [isSearchClicked,searchTerm, jokesQuantity, currentPage])
 
+
+  
+// jokes.map((joke) => console.log(joke));
+  
+console.log(isSearchClicked);
 
   
  
@@ -67,6 +73,7 @@ jokes.map((joke) => console.log(joke));
         setSearchTerm={setSearchTerm}
         jokesQuantity={jokesQuantity}
         setJokesQuantity={setJokesQuantity}
+        setIsSearchClicked={setIsSearchClicked}
       />
 
       {loading ? (
@@ -75,11 +82,11 @@ jokes.map((joke) => console.log(joke));
         </div>
       ) : (
         <div>
-          {jokes.length === 0 && (
+          {/* {!isSearchClicked && jokes.length === 0 && (
             <div  className={`${styles.message} ${styles["no-jokes"]}`}>
               <h3>Can't find Joke...</h3>
             </div>
-          )}
+          )} */}
 
           {jokes.length > 0 && (
             <ul>
@@ -89,7 +96,7 @@ jokes.map((joke) => console.log(joke));
             </ul>
           )}
 
-          {jokes.length < jokesQuantity && jokes.length > 0 && (
+          { jokes.length < jokesQuantity && jokes.length > 0 && (
             <div className={styles.message}>
               <h3>No More Jokes...</h3>
             </div>
@@ -103,6 +110,7 @@ jokes.map((joke) => console.log(joke));
           setCurrentPage={setCurrentPage}
           jokes={jokes}
           jokesQuantity={jokesQuantity}
+          setIsSearchClicked={setIsSearchClicked}
         />
       </div>
     </div>
