@@ -49,9 +49,11 @@ const maxQuantity=10
           <option value="9">9</option>   
       </select> */}
     
-    <select className={styles.selectBox} value={jokesQuantity} onChange={handleQuantityChange}>
+        <select className={styles.selectBox} value={jokesQuantity} onChange={handleQuantityChange}>
+
+        {/* “The first parameter _ represents the current element’s value, but since we don’t need the value here, we use _ as a placeholder as we only need index.” */}
           {Array.from({ length: maxQuantity }, (_, i) => (
-            <option key={i + 1} value={i + 1}>
+            <option key={i} value={i + 1}>
               {i + 1}
             </option>
           ))}
