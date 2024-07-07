@@ -14,11 +14,11 @@ const JokeLoaderContainer = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false)
   const [isSearchClicked, setIsSearchClicked] = useState(false)
-  const [fetched, setFetched]=useState(true)
+  const [fetched, setFetched]=useState(false)
 
 
 
-    const fetchDadJoke = async () => {
+  const fetchDadJoke = async () => {
       setLoading(true)  // loading
       const url = `https://icanhazdadjoke.com/search?term=${searchTerm}&page=${currentPage}&limit=${jokesQuantity}`
       try {
@@ -34,7 +34,7 @@ const JokeLoaderContainer = () => {
         const data = await response.json()
            
         setJokes(data.results)
-        setFetched(false)
+        setFetched(true)
        
       } catch (error) {
         console.error(error.message)
@@ -44,8 +44,8 @@ const JokeLoaderContainer = () => {
     }
     
   
-  // [searchItem, jokesQuantity, currentPage])
-  // use isSubmitted rather than searchTerm as searchTerm fetch the data every time when typing changes
+
+  //  isSearchClicked is true, then fetch data rather than the data  get fetched every time when typing changes
 
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const JokeLoaderContainer = () => {
         </div>
       ) : (
         <div>
-          {!fetched && jokes.length === 0 && (
+          {fetched && jokes.length === 0 && (
             <div  className={`${styles.message} ${styles["no-jokes"]}`}>
               <h3>Can't find Joke...</h3>
             </div>
@@ -96,7 +96,7 @@ const JokeLoaderContainer = () => {
             </ul>
           )}
 
-          { !fetched && jokes.length < jokesQuantity && jokes.length > 0 && (
+          { fetched && jokes.length < jokesQuantity && jokes.length > 0 && (
             <div className={styles.message}>
               <h3>No More Jokes...</h3>
             </div>

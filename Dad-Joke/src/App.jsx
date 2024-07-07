@@ -6,7 +6,7 @@ function App() {
 
 
   return (
-    <div className='box'>
+    <div style={{marginTop: '5rem'}}>
      <JokeLoaderContainer/>
     </div>
   )
