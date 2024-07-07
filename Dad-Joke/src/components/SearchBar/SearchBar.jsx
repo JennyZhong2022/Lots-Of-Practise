@@ -25,6 +25,7 @@ const maxQuantity=10
   
   return (
     <div className={styles.searchContainer}>
+      <h2 style={{display:'flex', justifyContent:'center', alignContent:'center'}}>Find Your Favorite Dad Joke</h2>
     <form onSubmit={handleSearchSubmit}>
 
       <input
