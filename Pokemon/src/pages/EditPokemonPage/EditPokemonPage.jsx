@@ -20,7 +20,7 @@ const EditPokemonPage = () => {
     }
   }, [id])
   
-  const handleUpdate = (pokemon) => {
+  const handleUpdatePokemon = (pokemon) => {
     updatePokemonByID(id, pokemon).then(() => {
       navigate(`/pokemons/${id}`)
     }).catch(e=>console.log(e))
@@ -32,7 +32,7 @@ const EditPokemonPage = () => {
     <>
     <h1>EditPokemonPage</h1>
   
-     {pokemon && <PokemonForm mode="Update" pokemon={pokemon} onSubmit={handleUpdate}/>} 
+     {pokemon && <PokemonForm mode="Update" pokemon={pokemon} handleUpdatePokemon={handleUpdatePokemon} formType='edit'/>} 
     </>
   )
 }

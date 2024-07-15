@@ -6,8 +6,8 @@ const AddPokemonPage = () => {
 
   const navigate=useNavigate()
 
-  const handleAddPokemon = (pokemonData) => {
-    createPokemon(pokemonData).then((id) => {
+  const handleAddPokemon = (pokemon) => {
+    createPokemon(pokemon).then((id) => {
       navigate(`/pokemons/${id}`)
     }).catch(e => {
       throw e.message
@@ -19,7 +19,7 @@ const AddPokemonPage = () => {
         Add a pokemon
       </h1>
       
-      <PokemonForm onSubmit={handleAddPokemon} />
+      <PokemonForm handleAddPokemon={handleAddPokemon}  formType='add'/>
     </>
   )
 }

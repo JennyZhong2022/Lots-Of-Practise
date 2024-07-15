@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
-const PokemonForm = ({onSubmit, mode='Add', pokemon}) => {
+const PokemonForm = ({handleUpdatePokemon,handleAddPokemon, formType,mode='Add', pokemon}) => {
 
 
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const PokemonForm = ({onSubmit, mode='Add', pokemon}) => {
 
 
   // same as below:
-  
+
   // useEffect(() => {
   //   if (pokemon) {
   //     setFormData({
@@ -41,8 +41,11 @@ const PokemonForm = ({onSubmit, mode='Add', pokemon}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-  
-      onSubmit(formData)
+    if (formType === 'add')
+    { handleAddPokemon(formData) }
+    else if (formType === 'edit') {
+      handleUpdatePokemon(formData)
+   }
   
   }
 
