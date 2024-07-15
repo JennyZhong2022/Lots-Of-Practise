@@ -1,0 +1,20 @@
+.NavBar {
+  position: fixed;
+  top: 0;
+  min-width: 100vw;
+  max-width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Link {
+
+  font-size: larger;
+
+  &_active {
+    color: rgb(103, 168, 168);
+    font-weight: bold;
+  }
+}

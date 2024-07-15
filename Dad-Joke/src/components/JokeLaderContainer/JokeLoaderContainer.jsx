@@ -10,7 +10,7 @@ import styles from './JokeLoaderContainer.module.scss'
 const JokeLoaderContainer = () => {
   const [jokes, setJokes]=useState([])
   const [searchTerm, setSearchTerm] = useState('')
-  const [jokesQuantity, setJokesQuantity] = useState(0)
+  const [jokesQuantity, setJokesQuantity] = useState(10)
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false)
   const [isSearchClicked, setIsSearchClicked] = useState(false)
@@ -43,7 +43,9 @@ const JokeLoaderContainer = () => {
       }   
     }
     
-  
+  useEffect(() => {
+    fetchDadJoke()
+  },[])
 
   //  isSearchClicked is true, then fetch data rather than the data  get fetched every time when typing changes
 

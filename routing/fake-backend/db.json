@@ -1,0 +1,44 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "amazon_link": "https://www.amazon.com/dp/B08R3Y5J4P",
+      "cover_image_link": "https://images.squarespace-cdn.com/content/v1/58c180edff7c50dd0e51a2ad/1596041993633-UW2GTN4JZP8XLPZKKXCJ/9781847493699.jpg",
+      "description": "A classic novel that explores the themes of love, reputation, and class in early 19th century England."
+    },
+    {
+      "id": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "amazon_link": "https://www.amazon.com/dp/B00K0OI42W",
+      "cover_image_link": "https://m.media-amazon.com/images/I/41j-s9fHJcL.jpg",
+      "description": "A profound novel that addresses serious issues like racial injustice and moral growth in the American South."
+    },
+    {
+      "id": 3,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "amazon_link": "https://www.amazon.com/dp/B08R3Y5J4P",
+      "cover_image_link": "https://images-na.ssl-images-amazon.com/images/I/81af+MCATTL.jpg",
+      "description": "A tragic love story set in the Roaring Twenties that critiques the American Dream."
+    },
+    {
+      "id": 4,
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "amazon_link": "https://www.amazon.com/dp/B08R3Y5J4P",
+      "cover_image_link": "https://m.media-amazon.com/images/I/61iwE2SfFnL._AC_UF894,1000_QL80_.jpg",
+      "description": "An epic tale of obsession and revenge between a sea captain and a giant white whale."
+    },
+    {
+      "id": 5,
+      "title": "1984",
+      "author": "George Orwell",
+      "amazon_link": "https://www.amazon.com/dp/B08R3Y5J4P",
+      "cover_image_link": "https://miro.medium.com/v2/resize:fit:7084/1*6QXManBm7wsBgDiagqPH8Q.png",
+      "description": "A dystopian novel that delves into themes of totalitarianism, surveillance, and individualism."
+    }
+  ]
+}
