@@ -1,29 +1,35 @@
 // JokesPagination.jsx
 
-import React from 'react';
-import styles from './JokesPagination.module.scss'; // Import SCSS module
+import React from "react";
+import styles from "./JokesPagination.module.scss"; // Import SCSS module
 
-const JokesPagination = ({ setCurrentPage, currentPage, jokes, jokesQuantity ,setIsSearchClicked}) => {
+const JokesPagination = ({
+  setCurrentPage,
+  currentPage,
+  jokes,
+  jokesQuantity,
+  setIsSearchClicked,
+}) => {
   const maxPage = 10;
 
   const handlePaginationNext = () => {
     if (currentPage < maxPage) {
-      setCurrentPage(prev => prev + 1);
-      setIsSearchClicked(true)
+      setCurrentPage((prev) => prev + 1);
+      setIsSearchClicked(true);
     }
   };
 
   const handlePaginationPrevious = () => {
     if (currentPage > 1) {
-      setCurrentPage(prev => prev - 1);
-      setIsSearchClicked(true)
+      setCurrentPage((prev) => prev - 1);
+      setIsSearchClicked(true);
     }
   };
 
   const handleCurrentPageChange = (e) => {
     const newPage = Number(e.target.value);
     setCurrentPage(newPage);
-    setIsSearchClicked(true)
+    setIsSearchClicked(true);
   };
 
   return (

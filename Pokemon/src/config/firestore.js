@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB6La4fnsSGUBKsZHTrtUjzHRIq-T54icI",
+  // apiKey: "AIzaSyB6La4fnsSGUBKsZHTrtUjzHRIq-T54icI",
   authDomain: "pokemon-b3b95.firebaseapp.com",
   projectId: "pokemon-b3b95",
   storageBucket: "pokemon-b3b95.appspot.com",
   messagingSenderId: "764012126374",
-  appId: "1:764012126374:web:a3cd1c2b99cfd54d785467"
+  appId: "1:764012126374:web:a3cd1c2b99cfd54d785467",
 };
 
 // Initialize Firebase
